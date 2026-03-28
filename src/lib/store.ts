@@ -2,6 +2,8 @@
 import { genId, hashPassword } from './db';
 import type { User, Site, Path, Level, SiteMember, PathAccess, Progress, JoinRequest, Invitation, Message, UserRole } from './db';
 
+export { hashPassword };
+
 const STORE_KEY = 'mp_store';
 
 interface Store {

@@ -143,7 +143,7 @@ export default function SitesPage() {
                           <Icon name="Edit2" size={14} />
                         </button>
                         <button
-                          onClick={() => updateSite(site.id, { status: site.status === 'active' ? 'inactive' : 'active' }) || reload()}
+                          onClick={() => { updateSite(site.id, { status: site.status === 'active' ? 'inactive' : 'active' }); reload(); }}
                           className="text-muted-foreground hover:text-foreground transition-colors p-1.5"
                         >
                           <Icon name={site.status === 'active' ? 'PauseCircle' : 'PlayCircle'} size={14} />

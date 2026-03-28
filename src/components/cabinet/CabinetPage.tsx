@@ -4,7 +4,7 @@ import { useApp } from '@/lib/context';
 import {
   getUserPathAccess, getUserProgress, getMessages,
   updateUser, sendMessage, markRead, hashPassword,
-  createJoinRequest, getAllUsers, getSites
+  createJoinRequest, getAllUsers
 } from '@/lib/store';
 import type { PathAccess, Path } from '@/lib/db';
 import QuestPlayer from './QuestPlayer';

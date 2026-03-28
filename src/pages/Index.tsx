@@ -1,6 +1,6 @@
 import { useApp } from '@/lib/context';
 import OwnerSetup from '@/components/auth/OwnerSetup';
-import AuthPage from '@/components/auth/AuthPage';
+import LandingPage from '@/components/landing/LandingPage';
 import Sidebar from '@/components/layout/Sidebar';
 import DashboardPage from '@/components/dashboard/DashboardPage';
 import SitesPage from '@/components/sites/SitesPage';
@@ -12,13 +12,15 @@ import MessagesPage from '@/components/messages/MessagesPage';
 
 export default function Index() {
   const { currentUser, hasOwnerAccount, activePage } = useApp();
+  const params = new URLSearchParams(window.location.search);
+  const inviteToken = params.get('invite') || undefined;
 
   if (!hasOwnerAccount) {
     return <OwnerSetup />;
   }
 
   if (!currentUser) {
-    return <AuthPage />;
+    return <LandingPage inviteToken={inviteToken} />;
   }
 
   const renderPage = () => {
